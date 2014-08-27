@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script> -->
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<link href="css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.js"></script>
+
+<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+  
+</script>
+
+</head>
+
+<body style="margin:0px;padding:0px;overflow:hidden">
+
+<div style="z-index:100; position:absolute">
+hello!
+	<form id="address_form">
+	Address: <input type="text" id="address_val">
+	<input type="submit">
+	</form>
+</div>
+
+<script>
+$('#address_form').submit(function(event) {
+	$(document).ready(function(){
+        var address = $('#address_val').val();
+        var iframe = $('#major_frame');
+        var i = 0;
+        iframe.attr('src', address);
+      });
+	
+	event.preventDefault();
+});
+</script>
+
+<iframe src="http://www.qq.com/" id="major_frame" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
+
+
+</body>
+</html>
